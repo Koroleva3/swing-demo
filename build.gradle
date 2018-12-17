@@ -28,3 +28,26 @@ dependencies {
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.11'
 }
+
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'edu.sc.seis.gradle:launch4j:2.4.4'
+  }
+}
+
+repositories {
+  jcenter()
+}
+
+apply plugin: 'java'
+apply plugin: 'edu.sc.seis.launch4j'
+
+launch4j {
+  mainClassName = 'com.example.myapp.Start'
+  icon = "${projectDir}/icons/myApp.ico"
+}
+
